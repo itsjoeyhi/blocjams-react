@@ -39,10 +39,6 @@ class Album extends Component {
       this.play();
     }
   }
-
-
-
-
   render() {
     return (
       <section className="album">
