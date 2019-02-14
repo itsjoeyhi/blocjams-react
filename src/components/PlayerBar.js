@@ -1,9 +1,12 @@
 
  import React, { Component } from 'react';
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
 
+>>>>>>> audioplayback-assignment
+=======
 >>>>>>> audioplayback-assignment
  class PlayerBar extends Component {
    render() {
