@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import PlayerBar from './PlayerBar';
 
 class Album extends Component {
   constructor(props) {
@@ -59,11 +58,6 @@ class Album extends Component {
       this.play();
     }
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> audioplayback-assignment
-
   handlePrevClick() {
   const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
       const newIndex = Math.max(0, currentIndex - 1);
@@ -78,11 +72,6 @@ class Album extends Component {
     this.setSong(newSong);
     this.play();
   }
-<<<<<<< HEAD
-=======
->>>>>>> audioplayback-assignment
-=======
-
   handleTimeChange(e) {
     if (!this.state.isPlaying) {
       return
@@ -93,7 +82,6 @@ class Album extends Component {
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
   }
->>>>>>> audioplayback-assignment
   render() {
     return (
       <section className="album">
@@ -125,24 +113,6 @@ class Album extends Component {
                <td>{song.title}</td>
                <td>{song.duration}</td>
              <td className= "song-actions">
-<<<<<<< HEAD
-             <button>
-             <span className="song-number">{index+1}</span>
-             <span className="ion-play"></span>
-             <span className="ion-pause"></span>
-            </button>
-              </td>
-              </tr>
-            )}
-           </tbody>
-         </table>
-         <PlayerBar
-           isPlaying={this.state.isPlaying}
-           currentSong={this.state.currentSong}
-           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-           handlePrevClick={() => this.handlePrevClick()}
-           handleNextClick={() => this.handleNextClick()}
-=======
              <button id="song-action-btns">
                       { (this.state.currentSong.title === song.title) ?
                         <span className={this.state.isPlaying ? "ion-pause" : "ion-play"}></span>
@@ -159,18 +129,6 @@ class Album extends Component {
                 )}
                 </tbody>
             </table>
-            
-         <PlayerBar
-           isPlaying={this.state.isPlaying}
-           currentSong={this.state.currentSong}
-           currentTime={this.audioElement.currentTime}
-           duration={this.audioElement.duration || 0}
-           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-           handlePrevClick={() => this.handlePrevClick()}
-           handleNextClick={() => this.handleNextClick()}
-           handleTimeChange={(e) => this.handleTimeChange(e)}
->>>>>>> audioplayback-assignment
-         />
       </section>
     );
   }
