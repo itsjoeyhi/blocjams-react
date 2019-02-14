@@ -40,6 +40,7 @@ class Album extends Component {
       this.play();
     }
   }
+<<<<<<< HEAD
 
   handlePrevClick() {
   const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
@@ -55,6 +56,8 @@ class Album extends Component {
     this.setSong(newSong);
     this.play();
   }
+=======
+>>>>>>> audioplayback-assignment
   render() {
     return (
       <section className="album">
