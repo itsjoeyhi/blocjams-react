@@ -29,9 +29,9 @@
            <div className="total-time">{this.props.duration}</div>
          </section>
          <section id="volume-control">
-           <div className="icon ion-volume-low"></div>
+           <div className="icon volume-low"></div>
            <input type="range" className="seek-bar" value="80" />
-           <div className="icon ion-volume-high"></div>
+           <div className="icon volume-high"></div>
          </section>
          </section>
      );
