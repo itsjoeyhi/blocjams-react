@@ -81,6 +81,10 @@ class Album extends Component {
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
   }
+    formatTime(time) {
+      return time ? `${Math.floor(time / 60)}:${Number(time % 60 / 100).toFixed(2).substr(2,3)}` : '-:--'
+  }
+    
   render() {
     return (
       <section className="album">
@@ -137,6 +141,8 @@ class Album extends Component {
            handlePrevClick={() => this.handlePrevClick()}
            handleNextClick={() => this.handleNextClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
+           formatTime={(time) => this.formatTime(time)}
+
          />
       </section>
     );
