@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import PlayerBar from './PlayerBar';
+import PlayerBar from './PlayerBar'
 
 class Album extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class Album extends Component {
       },
       durationchange: e => {
         this.setState({ duration: this.audioElement.duration });
-      }
+      },
     };
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
@@ -81,10 +81,14 @@ class Album extends Component {
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
   }
-    formatTime(time) {
+    formatTime (time) {
       return time ? `${Math.floor(time / 60)}:${Number(time % 60 / 100).toFixed(2).substr(2,3)}` : '-:--'
   }
-    
+    handleVolumeChange (e) {
+      const newState = e.target.value;
+      this.audioElement.volume = newState;
+      this.setState ({currentVolume: newState});
+    }
   render() {
     return (
       <section className="album">
@@ -142,6 +146,7 @@ class Album extends Component {
            handleNextClick={() => this.handleNextClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            formatTime={(time) => this.formatTime(time)}
+           handleVolumeChange= {(e) => this.handleVolumeChange(e)}
 
          />
       </section>
