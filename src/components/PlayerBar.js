@@ -28,10 +28,10 @@
              step="0.01" 
              onChange={this.props.handleTimeChange}
            />   
-           <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
+           <div className="total-time"/>
          </section>
          <section id="volume-control">
-           <div className="icon volume-low"></div>
+           <div className="icon volume-low">Volume</div>
            <input type="range" className="seek-bar" value={this.props.currentVolume} max ='1' min='0' step='0.01' onChange={this.props.handleVolumeChange}/> 
            <div className="icon volume-high"></div>
          </section>

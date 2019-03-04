@@ -105,20 +105,13 @@ class Album extends Component {
              <col id="song-number-column" />
              <col id="song-title-column" />
              <col id="song-duration-column" />
-           </colgroup>  
-           <thead>
-             <td>Number</td>
-             <td>Song</td>
-             <td>Duration</td>
-           </thead>
+           </colgroup>
            <tbody>
             {this.state.album.songs.map ((song, index) => 
              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} 
               onMouseEnter={() => this.setState({ isHovered: index + 1 })}
                 onMouseLeave={() => this.setState({ isHovered: false })}>
                 <td className="song-actions"></td>
-               <td>{song.title}</td>
-               <td>{song.duration}</td>
              <td className= "song-actions">
              <button id="song-action-btns">
                       { (this.state.currentSong.title === song.title) ?
@@ -132,7 +125,9 @@ class Album extends Component {
                       </button>
                     </td>
                     <td className="song-title">{song.title}</td>
-                  </tr>
+                    <td className= "song-duration"> {this.formatTime(song.duration)}</td>
+                    </tr>
+
                 )}
                 </tbody>
             </table>
